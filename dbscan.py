@@ -41,14 +41,18 @@ data_set = [x1, x2, x3, x4, x5, x6, x7, x8, x9]
 # 			seed_set += neighbors
 
 
-def neighbors(data_set, point, radius):
+def range_query(data_set, point, radius):
 	neighbors = []
 	for other_point in data_set:
 		if math.dist(point.coords(), other_point.coords()) <= radius:
 			neighbors.append(other_point)
 	return neighbors
 
-print(neighbors(data_set, x1, 1))
+print(range_query(data_set, x1, 1))
+
+def dbscan(data, neighbor_range, density_threshold):
+	for point in data:
+		
 
 
 # 1. find neighbors
