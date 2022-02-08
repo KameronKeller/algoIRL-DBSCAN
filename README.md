@@ -69,7 +69,7 @@ for each point in data
 
 ## Tools
 
-[distance measures](https://github.com/reddavis/Distance-Measures)
+
 
 ## References
 
