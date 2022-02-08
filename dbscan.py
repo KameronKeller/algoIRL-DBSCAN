@@ -11,15 +11,14 @@ from point import Point
 x1 = Point([0,0])
 x2 = Point([1,0])
 x3 = Point([1,1])
-# x4 = Point([2,2])
-# x5 = Point([3,1])
-# x6 = Point([3,0])
+x4 = Point([2,2])
+x5 = Point([3,1])
+x6 = Point([3,0])
 x7 = Point([0,1])
-# x8 = Point([3,2])
+x8 = Point([3,2])
 x9 = Point([6,3])
 
-# data_set = [x1, x2, x3, x4, x5, x6, x7, x8, x9]
-data_set = [x1, x2, x3, x7]
+data_set = [x1, x2, x3, x4, x5, x6, x7, x8, x9]
 
 # for point in database:
 # 	if point not labeled:
@@ -89,7 +88,7 @@ def dbscan(data, neighbor_range, density_threshold):
 			if len(next_set_of_neighbors) < density_threshold:
 				print("     ", "go to next neighbor if len(set_of_neighbors) < density_threshold")
 				continue
-			seed_set = seed_set + next_set_of_neighbors
+			seed_set.extend(next_set_of_neighbors)
 			print("     ", "seed_set for next inner loop:", seed_set)
 			for neighbor in seed_set:
 					print("          ", "neighbor:", neighbor, neighbor.label)
@@ -98,6 +97,8 @@ def dbscan(data, neighbor_range, density_threshold):
 		cluster_id += 1
 
 dbscan(data_set, 1, 3)
+print("----------Verify Results----------")
+
 num = 1
 for point in data_set:
 	print("point ", num, "label:", point.label, "coords: ", point.coords())
