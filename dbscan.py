@@ -48,21 +48,39 @@ def range_query(data_set, point, radius):
 			neighbors.append(other_point)
 	return neighbors
 
-print(range_query(data_set, x1, 1))
+# print(range_query(data_set, x1, 1))
 
 def dbscan(data, neighbor_range, density_threshold):
+	cluster_id = 0
 	for point in data:
+		if point.label is not None:
+			continue
+		set_of_neighbors = range_query(data, point, neighbor_range)
+		print("point:", point, "neigh:", set_of_neighbors)
+		# if len(set_of_neighbors) < density_threshold:
+		# 	point.set_label("Noise")
+		# 	continue
+		# cluster_label = f'cluster_{cluster_id}'
+		# point.set_label(cluster_label)
+		# set_of_neighbors.remove(point)
 		
+		# seed_set = set_of_neighbors
 
+		# for neighbor in seed_set:
+		# 	if neighbor.label == "Noise":
+		# 		neighbor.label = cluster_label
+		# 	if neighbor.label is not None:
+		# 		continue
+		# 	next_set_of_neighbors = range_query(data, point, neighbor_range)
+		# 	neighbor.label = cluster_label
+		# 	if len(next_set_of_neighbors) < density_threshold:
+		# 		continue
+		# 	seed_set = seed_set + next_set_of_neighbors
 
-# 1. find neighbors
+		# cluster_id += 1
 
-# 1.1 get neighbors as list
-# 1.2 
-
-
-# 2. create clusters with core points
-
-
-# 3. assign border and noise points
-
+dbscan(data_set, 1, 3)
+# num = 1
+# for point in data_set:
+# 	print("point ", num, "label:", point.label, "coords: ", point.coords())
+# 	num += 1
