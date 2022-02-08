@@ -82,7 +82,7 @@ def dbscan(data, neighbor_range, density_threshold):
 			if neighbor.label is not None:
 				print("     ", "go to next neighbor if label is not None")
 				continue
-			next_set_of_neighbors = range_query(data, point, neighbor_range)
+			next_set_of_neighbors = range_query(data, neighbor, neighbor_range)
 			print("     ", "next_set_of_neighbors:", next_set_of_neighbors)
 			neighbor.label = cluster_label
 			print("     ", "neighbor:", neighbor, "label:", neighbor.label)
