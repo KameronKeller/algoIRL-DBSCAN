@@ -20,27 +20,6 @@ x9 = Point([6,3])
 
 data_set = [x1, x2, x3, x4, x5, x6, x7, x8, x9]
 
-# for point in database:
-# 	if point not labeled:
-# 		# get neighbors
-# 		neighbors = neighbors(data_set, point, radius)
-# 	else:
-# 		return
-# 	if number(neighbors) < min_points:
-# 		point.label = "noise"
-# 		return
-# 	c = "next cluster label"
-# 	label(p) = c
-# 	seed_set = (neighbors \ {p}) # seed set = set difference of neighbors and p
-# 	for q in seed_set:
-# 		if label(q) = "noise":
-# 			label(q) = c
-# 		elif label(q) != None:
-# 			neighbors = range_query(database, min_distance, point, radius)
-# 			label(q) = c
-# 		if number(neighbors) < min_points:
-# 			seed_set += neighbors
-
 
 def range_query(data_set, point, radius):
 	neighbors = []
@@ -48,8 +27,6 @@ def range_query(data_set, point, radius):
 		if math.dist(point.coords(), other_point.coords()) <= radius:
 			neighbors.append(other_point)
 	return neighbors
-
-# print(range_query(data_set, x1, 1))
 
 def dbscan(data, neighbor_range, density_threshold):
 	cluster_id = 0
