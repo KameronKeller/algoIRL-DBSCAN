@@ -19,29 +19,37 @@ Let's break that down a little...
 
 So... why do we care that we can group together points into clusters?
 
+---
 ## Scene 2: Present a problem (Applications of DBSCAN)
 
-Say we want to.. teach a computer to recognize patterns!
+Say we want to.. recognize patterns..
 
-Assuming the world is made up of distinct groups of objects that share properties
+Assuming the world is made up of distinct groups of objects that share properties we realize that some objects are more similar to each other than others.
 
-We realize that some objects are more similar to each other than others.
+It doesn't matter if we know "what" something is, it just matters that we can group it together with different things based on properties that can be measured.
 
 This concept can be used to:
-- Expose **fraudulent activity!**
-- Filter **spam!**
+- Determine a berry's **ripeness!**
 - Build a **recommender!**
 - Identify **fake news!**
+- Filter **things!**
 - We can basically apply this anywhere patterns of similarity exist!
 
+---
 ## Scene 3: History/Legacy!
-DBSCAN falls under a family of clustering algorithms.
 
-## Scene 4: Solve the problem
+Why is DBSCAN used for these applications?
 
-## 5. How does it work? (meat and potatoes)
+DBSCAN falls under a family of clustering algorithms. 
 
-Ok, so how exactly does this work...
+<!-- add history, importance, etc -->
+
+---
+## Scene 4. How does it work? (explanation)
+
+Ok, so how exactly does DBSCAN work...
+
+Let's revisit the 
 
 The algorithm has two adjustable parameters, the *minimum number of points* that fall within a certain *radius* of a point. This allows us control over the density of the clusters.
 
@@ -59,9 +67,22 @@ Border points - data points that have less than the specified number of neighbor
 
 Noise points - data points that have no neighboring points withing the range.
 
-## 6. Computer speak: pseudocode
+## Scene 6. Pseudocode
 
-## 6. Summary
+<!-- write a script talking through the pseudocode, may be best to get a solid version of our pseudocode first and simplify it a little -->
+
+## Scene 7. Complexity
+
+DBSCAN checks for neighbors within the n dimensional shape around each point in the data. This checking process takes O(n^2).
+
+<!-- detailed analysis / complexity equation? => simplifies down to O(n^2) -->
+
+## Scene 8. Summary
 
 Let's recap that...
 
+<!-- add summary of DBSCAN concepts -->
+ 
+ ## Scene 9. References
+
+<!-- add references here -->
