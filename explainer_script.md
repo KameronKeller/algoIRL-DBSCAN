@@ -16,7 +16,9 @@ Why does it matter that we can cluster together a set of data points?
 
 ## 2. Present a problem (Applications of DBSCAN)
 
-Say we want to..
+Say we want to.. 
+
+- accomplish x with unsupervised learning
 
 ## 3. Solve the problem
 
