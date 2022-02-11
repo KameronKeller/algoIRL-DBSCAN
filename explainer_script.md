@@ -49,7 +49,7 @@ DBSCAN falls under a family of clustering algorithms.
 
 Ok, so how exactly does DBSCAN work...
 
-Let's revisit the 
+Let's use a *recommender* example to walk through this.
 
 The algorithm has two adjustable parameters, the *minimum number of points* that fall within a certain *radius* of a point. This allows us control over the density of the clusters.
 
@@ -71,6 +71,9 @@ Noise points - data points that have no neighboring points withing the range.
 
 <!-- write a script talking through the pseudocode, may be best to get a solid version of our pseudocode first and simplify it a little -->
 
+<!-- Here's a web app that might help -->
+[slides code highlighter](https://romannurik.github.io/SlidesCodeHighlighter/)
+
 ## Scene 7. Complexity
 
 DBSCAN checks for neighbors within the n dimensional shape around each point in the data. This checking process takes O(n^2).
@@ -86,3 +89,9 @@ Let's recap that...
  ## Scene 9. References
 
 <!-- add references here -->
+
+
+
+# NOTES/Questions
+
+What is `epsilon` and perhaps this needs to be included as the variable name for the shape created around each point? epsilon is in most implementations and examples including the original paper.
