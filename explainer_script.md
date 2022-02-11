@@ -90,8 +90,3 @@ Let's recap that...
 
 <!-- add references here -->
 
-
-
-# NOTES/Questions
-
-What is `epsilon` and perhaps this needs to be included as the variable name for the shape created around each point? epsilon is in most implementations and examples including the original paper.
