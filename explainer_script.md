@@ -35,6 +35,21 @@ This concept can be used to:
 - Filter **things!**
 - We can basically apply this anywhere patterns of similarity exist!
 
+Our main character Karen purchases flour from TraderShmoes. The store then sends our protagonist a list of coupons with great recommendations! Karen is ecstatic!
+
+*scene props*:
+- toilet paper
+- masks
+- bullets
+- and hand sanitizer
+*end scene props*
+
+TraderShmoes doesn't know the hero of this story, so how can they recommend things for them to buy?
+
+Luckily TraderShmoes can "measure" what others have purchased and cluster all of those customers together based on their similar interests.
+
+The cluster of products can represent an interest category of specific type of customer, so if one or more items from that cluster are purchased then some sort of conclusion can be made as to what else they might want.
+
 ---
 ## Scene 3: History/Legacy!
 
@@ -49,7 +64,7 @@ DBSCAN falls under a family of clustering algorithms.
 
 Ok, so how exactly does DBSCAN work...
 
-Let's use a *recommender* example to walk through this.
+<!-- Idea of neighbors to explain -->
 
 The algorithm has two adjustable parameters, the *minimum number of points* that fall within a certain *radius* of a point. This allows us control over the density of the clusters.
 
