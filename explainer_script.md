@@ -12,24 +12,27 @@ The name kind of gets you there... **density based spatial clustering of applica
 
 Let's break that down a little...
 
-1. Given a set of points in some n dimensional space
-2. Find points that are closely packed together
-3. Tag as unique *clusters*
+1. Given a set of points in some n dimensional space,
+2. then, find points that are closely packed together,
+3. and, tag these areas as unique *clusters.*
 4. The points that are not tightly packed together are outliers. These points without any close neighbors are considered *noise*.
 
 So... why do we care that we can group together points into clusters?
 
 ## Scene 2: Present a problem (Applications of DBSCAN)
 
-Say we want to..
+Say we want to.. teach a computer to recognize patterns!
 
+Assuming the world is made up of distinct groups of objects that share properties
+
+We realize that some objects are more similar to each other than others.
+
+This concept can be used to:
 - Expose **fraudulent activity!**
 - Filter **spam!**
 - Build a **recommender!**
 - Identify **fake news!**
 - We can basically apply this anywhere patterns of similarity exist!
-
-Many of the specific examples above fall into what is known as *unsupervised learning.*
 
 ## Scene 3: History/Legacy!
 DBSCAN falls under a family of clustering algorithms.
