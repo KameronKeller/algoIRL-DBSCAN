@@ -4,15 +4,20 @@
 
 What is DBSCAN?
 
-DBSCAN, or (density based spatial clustering of applications with noise ) is a data clustering algorithm that can find groups of data points that are close to each other.
+DBSCAN is a *density based* clustering algorithm. It finds areas in a data set with a high density of observations! 
 
-Let's break that down a little -
+Like you were probably going to guess... it also determines areas with a low density of observations, and, isolates this *noise.*
 
-Given a set of points in some space, tag the points that are closely packed together as unique groups... or *clusters*... 
+It kind of gets you there with the name - **density based spatial clustering of applications with noise...**
 
-The points that are not tightly packed together are outliers. These points without any neighbors are considered *noise*.
+Let's break that down a little...
 
-Why do we care that we can cluster together points?
+1. Given a set of points in some n dimensional space
+2. Points that are closely packed together
+3. Tag as unique *clusters*
+4. The points that are not tightly packed together are outliers. These points without any close neighbors are considered *noise*.
+
+So... why do we care that we can group together points into clusters?
 
 ## 2. Present a problem (Applications of DBSCAN)
 
@@ -20,9 +25,10 @@ Say we want to..
 
 - accomplish x with unsupervised learning
 
-## 3. Solve the problem
+## 3. History/Legacy!
+DBSCAN falls under a family of clustering algorithms.
 
-## 4. How will it help?
+## 4. Solve the problem
 
 ## 5. How does it work? (meat and potatoes)
 The algorithm has two adjustable parameters, the *minimum number of points* that fall within a certain *radius* of a point. This allows us control over the density of the clusters.
