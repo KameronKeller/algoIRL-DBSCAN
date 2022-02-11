@@ -8,7 +8,7 @@ DBSCAN, or (density based spatial clustering of applications with noise ) is a d
 
 Let's break that down a little -
 
-Given a set of points in some space, tag the points that are closely packed together as unique groups... or *clusters*... 
+Given a set of points in some space, tag these points, if they are closely packed together, as unique groups... or *clusters*... 
 
 The points that are not tightly packed together are outliers. These points without any neighbors are considered *noise*.
 
