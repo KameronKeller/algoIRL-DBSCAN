@@ -41,7 +41,6 @@ Our main character Sharon purchases flour from TraderShmoes. The store then send
 *scene props:*
 - toilet paper
 - masks
-- bullets
 - and hand sanitizer
 *end scene props*
 
