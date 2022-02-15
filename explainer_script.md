@@ -139,7 +139,7 @@ We step through and label every point in the dataset:
 
 ## Scene 7. Complexity
 
-DBSCAN can be implemented using a variety of range query methods. This means that the time complexity is heavily influenced by the underlying datastructure and range query operation.
+DBSCAN can be implemented using a variety of range query methods. This means that the time complexity is heavily influenced by the underlying data structure and range query operation.
 
 But let's begin with the basics.
 
