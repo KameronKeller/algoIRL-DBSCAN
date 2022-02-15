@@ -125,12 +125,39 @@ We step through and label every point in the dataset:
   
 - If the number of points inside `epsilon` is less than `minimum_points` then that point is either a **noise point**, 
 
-- ...or a **border point**, iif it has a **core point** as a neighbor.
+- ...or a **border point**, IIF it has a **core point** as a neighbor.
 
+---
 ## Scene 6. Pseudocode
 
+### Driver loop to make sure each point is visited
+1. For each point in the data:
+   
+   ### Check if point is already part of a cluster or marked as noise
+   1. First check if that point has been visited and labeled?
+      
+      ### Do some work and find the points neighbors 
+         1. then get a set of its neighbors.
+      
+      ### Is it a core point?
+         1. If it ins't, label it as **noise**.
+      
+      ### This point is a core point, initialize a cluster with it
+         1. create a new cluster label, and
+         2. assign this point to that new cluster.
+         3. make sure to exclude this point from the set of neighbors.
+         
+         ### Expand the cluster to include all core and border points.
+         1. For each neighbor:
+            
+            1. If the neighbor is already labeled as noise:
+               1. now we know it is actually a **border point** and is part of this cluster.
+            
+            2. Otherwise, if the point is not labeled,
+               1. label it as part of this cluster
+               2. and then get it's neighbors, and continue adding neighbors of core points to the neighborhood, aka the cluster. This allows the loop to continue until no more neighbors of neighbors are left and the cluster expansion is completed.
 
-
+---
 ## Scene 7. Complexity
 
 DBSCAN can be implemented using a variety of range query methods. This means that the time complexity is heavily influenced by the underlying data structure and range query operation.
@@ -149,10 +176,23 @@ However, DBSCAN has been implemented using an r*-tree data structure, which stor
 
 The final conclusion is that DBSCAN has a worst case time complexity of O(n*D), where D is the time complexity of the distance function. 
 
+---
 ## Scene 8. Summary
 
 Let's recap that...
- 
+
+DBSCAN is a clustering algorithm that is popular for unsupervised learning! It can take n dimensional data sets and form clusters of spatially similar observations. The user can then interpret these different clusters for their own needs!
+
+The key components of DBSCAN are:
+- Inputting `epsilon` and `minimum_points` to influence clustering behavior.
+- Labeling points as core, border, or noise.
+- Expanding clusters by propagating outward into neighboring core points.
+- Isolating low density observations as noise.
+- Delivering uniquely labeled clusters of dense observations.
+
+...and remember, the time complexity of DBSCAN is O(n*D).
+
+---
  ## Scene 9. References
 
 [Density-Based Cluster- and Outlier Analysis, Hans-Peter Kriegel](https://www.dbs.ifi.lmu.de/Forschung/KDD/Clustering/index.html)
