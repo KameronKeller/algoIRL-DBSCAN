@@ -61,9 +61,27 @@ The cluster of products can represent an interest category of specific type of c
 
 Why is DBSCAN used for these applications?
 
-DBSCAN falls under a family of clustering algorithms. 
+<!-- DBSCAN falls under a family of clustering algorithms.  -->
 
-<!-- add history, importance, etc -->
+DBSCAN was published in in 1996 at the University of Munich. It was written by Martin Ester, Hans-Peter Kriegel, Jörg Sander, and Xiaowei Xu, with the goal of creating an improved cluster analysis algorithm. 
+
+To understand the history of DBSCAN, we must begin with cluster analysis. Given a data set, it is not uncommon to find groupings (or clusters). Clusters help create classifications of data, which can then be analyzed and used to draw further conclusions. Cluster analysis was introduced in the 1930s in the field of anthropology and is frequently used in other scientific fields.
+
+Many algorithms for identifying clusters in datasets exist, all with their pros and cons. However, algorithms for analyzing clusters in large datasets have the following goals:
+1. Minimal knowledge about the domain.
+    - For example, the k-means clustering algorithms requires the number of clusters to be specified in advance. But what if you do not know how many clusters to plan for?
+
+2. Discovery of clusters with arbitrary shape.
+    - Consider the following dataset. Notice how there are clearly two clusters. Using an algorithm like k-means might result in something that looks like this: 
+    
+    instead of this:
+
+
+    (grab examples from: https://scikit-learn.org/0.15/auto_examples/cluster/plot_cluster_comparison.html)
+
+3. Finally, cluster algorithms need "good efficiency" on large databases.
+
+At the time of DBSCAN's publication, no clustering algorithm existed that satisfied all three of these requirements. DBSCAN met these requirements and provided a new way to analyze datasets.
 
 ---
 ## Scene 4. How does it work? (explanation)
