@@ -28,7 +28,8 @@ Assuming the world is made up of distinct groups of objects that share propertie
 
 It doesn't matter if we know "what" something is, it just matters that we can group it together with different things based on properties that can be measured.
 
-This concept can be used to:
+This concept can be used in:
+- Land-use detection
 - Determine a berry's **ripeness!**
 - Build a **recommender!**
 - Identify **fake news!**
@@ -127,5 +128,6 @@ Let's recap that...
  
  ## Scene 9. References
 
-<!-- add references here -->
+[Density-Based Cluster- and Outlier Analysis, Hans-Peter Kriegel](https://www.dbs.ifi.lmu.de/Forschung/KDD/Clustering/index.html)
 
+[A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise, Martin Ester, Hans-Peter Kriegel, Jörg Sander, Xiaowei Xu](https://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=5B7836C6FA0BBE6D059DE3E6E03C0428?doi=10.1.1.121.9220&rep=rep1&type=pdf)
