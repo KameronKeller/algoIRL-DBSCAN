@@ -139,9 +139,21 @@ We step through and label every point in the dataset:
 
 ## Scene 7. Complexity
 
-DBSCAN checks for neighbors within the n dimensional shape around each point in the data. This checking process takes O(n^2).
+DBSCAN can be implemented using a variety of range query methods. This means that the time complexity is heavily influenced by the underlying datastructure and range query operation.
 
-<!-- detailed analysis / complexity equation? => simplifies down to O(n^2) -->
+But let's begin with the basics.
+
+DBSCAN begins with a loop that goes over every item in the dataset. This part of the function is O(n), as the time it take scales linearly with the size of the dataset.
+
+Within this loop, it checks if the item has been labeled or not. If it has not, it performs the range query operation on that item.
+
+This is where things get a bit more complex. DBSCAN does not specify the type of range query algorithm required. The simple case is a function that loops through every other item in the dataset and checks to see if it is within the epsilon distance using euclidean distance (AKA the pythagorean theorem). This basic range query function also has a run time of O(n).
+
+Zooming out a bit, that means for every item in the dataset, we loop through the entire dataset. In Big-O notation, this means we have a time complexity of O(n*n), or O(n^2). 
+
+However, DBSCAN has been implemented using an r*-tree data structure, which stores distance data in memory. While it is thought that the average search time complexity of r*-trees is O(log n), "no formal analysis of the average runtime complexity has yet been conducted in the literature" (19.6).
+
+The final conclusion is that DBSCAN has a worst case time complexity of O(n*D), where D is the time complexity of the distance function. 
 
 ## Scene 8. Summary
 
