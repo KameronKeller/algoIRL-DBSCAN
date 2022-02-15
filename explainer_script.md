@@ -29,14 +29,20 @@ Assuming the world is made up of distinct groups of objects that share propertie
 It doesn't matter if we know "what" something is, it just matters that we can group it together with different things based on properties that can be measured.
 
 This concept can be used in:
-- Land-use detection
+- Analyse imagery and determine **land use!**
+- Find a protein's **docking sites!**
 - Determine a berry's **ripeness!**
+- Color **histograms!**
 - Build a **recommender!**
 - Identify **fake news!**
 - Filter **things!**
 - We can basically apply this anywhere patterns of similarity exist!
 
-Our main character Sharon purchases flour from TraderShmoes. The store then sends our protagonist a list of coupons with great recommendations! Sharon is ecstatic!
+These applications typically fall into the bucket of unsupervised learning where a program can distinguish differences among objects (i.e. make clusters of similarities), but does not necessarily need to know "what" the objects are.
+
+### Story
+
+Our main character purchases flour from TraderShmoes. The store then sends our protagonist a list of coupons with great recommendations! They are ecstatic!
 
 *scene props:*
 - toilet paper
