@@ -25,9 +25,11 @@ This algorithm attempts to label each point as one of the following:
 ## Algorithm abstraction
 
 ### Inputs
-- **data** - multi dimensional data points
-- **NEIGHBOR_RANGE** - the distance where other points within this range can be neighbors
-- **DENSITY_THRESHOLD** - minimum number of neighbor points required for a point to be a core point
+- **setOfPoints** `data` - multi dimensional data points
+- **epsilon** `eps` - the distance where other points within this range can be neighbors
+- **minimum points** - minimum number of neighbor points required for a point to be a core point
+
+Other considerations:
 - **ranging_method** - the formula to use for distance among data points
 - **point_label** - the option to be a *core*, *border*, or *noise* point. 
 
@@ -42,8 +44,8 @@ This algorithm attempts to label each point as one of the following:
 
 ## Pseudocode
 - Input: `data`
-- Input: `NEIGHBOR_RANGE`
-- Input: `DENSITY_THRESHOLD`
+- Input: `eps`
+- Input: `min_points`
 - Input: `ranging_method`
 - Input: `point_label`
   
@@ -66,10 +68,6 @@ for each point in data
     else
       border_point = Border.new(point)
 ```
-
-## Tools
-
-
 
 ## References
 
