@@ -46,8 +46,8 @@ def dbscan(data, epsilon, minimum_points):
 					if neighbor.label == "Noise":
 						neighbor.set_label(cluster_label)
 					elif neighbor.label is None:
-						next_set_of_neighbors = range_query(data, neighbor, epsilon)
 						neighbor.set_label(cluster_label)
+						next_set_of_neighbors = range_query(data, neighbor, epsilon)
 						if core_point(len(next_set_of_neighbors), minimum_points):
 							set_of_neighbors.extend(next_set_of_neighbors)
 				cluster_id += 1
