@@ -136,3 +136,9 @@ Let's recap that...
 [Density-Based Cluster- and Outlier Analysis, Hans-Peter Kriegel](https://www.dbs.ifi.lmu.de/Forschung/KDD/Clustering/index.html)
 
 [A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise, Martin Ester, Hans-Peter Kriegel, Jörg Sander, Xiaowei Xu](https://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=5B7836C6FA0BBE6D059DE3E6E03C0428?doi=10.1.1.121.9220&rep=rep1&type=pdf)
+
+[DBSCAN Revisited, Revisited: Why and How You Should (Still) Use DBSCAN, Erich Schubert, Jörg Sander, Martin Ester, Hans-Peter Kriegel, Xiaowei Xu](https://dl.acm.org/doi/pdf/10.1145/3068335)
+
+[DBSCAN From Wikipedia](https://en.wikipedia.org/wiki/DBSCAN)
+
+[scikit-learn](https://scikit-learn.org/stable/modules/clustering.html#dbscan)
