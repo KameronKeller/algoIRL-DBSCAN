@@ -68,6 +68,11 @@ for each point in data
     else
       border_point = Border.new(point)
 ```
+## Tools
+
+[Visualizing DBSCAN Clustering](https://www.naftaliharris.com/blog/visualizing-dbscan-clustering/)
+
+[Demo of DBSCAN clustering algorithm](https://notebooks.gesis.org/binder/jupyter/user/scikit-learn-scikit-learn-d7evzawb/lab/tree/notebooks/auto_examples/cluster/plot_dbscan.ipynb)
 
 ## References
 
