@@ -28,30 +28,29 @@ def range_query(data_set, point, radius):
 			neighbors.append(other_point)
 	return neighbors
 
-def dbscan(data, neighbor_range, density_threshold):
+def core_point(number_of_neighbors, minimum_points):
+	return number_of_neighbors >= minimum_points
+
+def dbscan(data, epsilon, minimum_points):
 	cluster_id = 0
 	for point in data:
-		if point.label is not None:
-			continue
-		set_of_neighbors = range_query(data, point, neighbor_range)
-		if len(set_of_neighbors) < density_threshold:
-			point.set_label("Noise")
-			continue
-		cluster_label = f'cluster_{cluster_id}'
-		point.set_label(cluster_label)
-		set_of_neighbors.remove(point)
-		seed_set = set_of_neighbors
-		for neighbor in seed_set:
-			if neighbor.label == "Noise":
-				neighbor.label = cluster_label
-			if neighbor.label is not None:
-				continue
-			next_set_of_neighbors = range_query(data, neighbor, neighbor_range)
-			neighbor.label = cluster_label
-			if len(next_set_of_neighbors) < density_threshold:
-				continue
-			seed_set.extend(next_set_of_neighbors)
-		cluster_id += 1
+		if point.label is None:
+			set_of_neighbors = range_query(data, point, epsilon)
+			if not core_point(len(set_of_neighbors), minimum_points):
+				point.set_label("Noise")
+			else:
+				cluster_label = f'cluster_{cluster_id}'
+				point.set_label(cluster_label)
+				set_of_neighbors.remove(point)
+				for neighbor in set_of_neighbors:
+					if neighbor.label == "Noise":
+						neighbor.set_label(cluster_label)
+					elif neighbor.label is None:
+						next_set_of_neighbors = range_query(data, neighbor, epsilon)
+						neighbor.set_label(cluster_label)
+						if core_point(len(next_set_of_neighbors), minimum_points):
+							set_of_neighbors.extend(next_set_of_neighbors)
+				cluster_id += 1
 
 dbscan(data_set, 1, 3)
 
