@@ -61,8 +61,6 @@ The cluster of products can represent an interest category of specific type of c
 
 Why is DBSCAN used for these applications?
 
-<!-- DBSCAN falls under a family of clustering algorithms.  -->
-
 DBSCAN was published in in 1996 at the University of Munich. It was written by Martin Ester, Hans-Peter Kriegel, Jörg Sander, and Xiaowei Xu, with the goal of creating an improved cluster analysis algorithm. 
 
 To understand the history of DBSCAN, we must begin with cluster analysis. Given a data set, it is not uncommon to find groupings (or clusters). Clusters help create classifications of data, which can then be analyzed and used to draw further conclusions. Cluster analysis was introduced in the 1930s in the field of anthropology and is frequently used in other scientific fields.
@@ -75,7 +73,6 @@ Many algorithms for identifying clusters in datasets exist, all with their pros 
     - Consider the following dataset. Notice how there are clearly two clusters. Using an algorithm like k-means might result in something that looks like this: 
     
     instead of this:
-
 
     (grab examples from: https://scikit-learn.org/0.15/auto_examples/cluster/plot_cluster_comparison.html)
 
@@ -132,14 +129,11 @@ We step through and label every point in the dataset:
 
 ## Scene 6. Pseudocode
 
-<!-- write a script talking through the pseudocode, may be best to get a solid version of our pseudocode first and simplify it a little -->
 
-<!-- Here's a web app that might help -->
-[slides code highlighter](https://romannurik.github.io/SlidesCodeHighlighter/)
 
 ## Scene 7. Complexity
 
-DBSCAN can be implemented using a variety of range query methods. This means that the time complexity is heavily influenced by the underlying datastructure and range query operation.
+DBSCAN can be implemented using a variety of range query methods. This means that the time complexity is heavily influenced by the underlying data structure and range query operation.
 
 But let's begin with the basics.
 
@@ -158,11 +152,15 @@ The final conclusion is that DBSCAN has a worst case time complexity of O(n*D), 
 ## Scene 8. Summary
 
 Let's recap that...
-
-<!-- add summary of DBSCAN concepts -->
  
  ## Scene 9. References
 
 [Density-Based Cluster- and Outlier Analysis, Hans-Peter Kriegel](https://www.dbs.ifi.lmu.de/Forschung/KDD/Clustering/index.html)
 
 [A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise, Martin Ester, Hans-Peter Kriegel, Jörg Sander, Xiaowei Xu](https://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=5B7836C6FA0BBE6D059DE3E6E03C0428?doi=10.1.1.121.9220&rep=rep1&type=pdf)
+
+[DBSCAN Revisited, Revisited: Why and How You Should (Still) Use DBSCAN, Erich Schubert, Jörg Sander, Martin Ester, Hans-Peter Kriegel, Xiaowei Xu](https://dl.acm.org/doi/pdf/10.1145/3068335)
+
+[DBSCAN From Wikipedia](https://en.wikipedia.org/wiki/DBSCAN)
+
+[scikit-learn](https://scikit-learn.org/stable/modules/clustering.html#dbscan)
