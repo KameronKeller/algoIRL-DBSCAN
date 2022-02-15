@@ -13,9 +13,9 @@ The name kind of gets you there... **density based spatial clustering of applica
 Let's break that down a little...
 
 1. Given a set of points in some n dimensional space,
-2. then, find points that are closely packed together,
+2. find points that are closely packed together,
 3. and, tag these areas as unique *clusters.*
-4. The points that are not tightly packed together are outliers. These points without any close neighbors are considered *noise*.
+4. The points that are not tightly packed together are outliers. These points without any close neighbors are considered *noise.*
 
 So... why do we care that we can group together points into clusters?
 
@@ -35,9 +35,9 @@ This concept can be used to:
 - Filter **things!**
 - We can basically apply this anywhere patterns of similarity exist!
 
-Our main character Karen purchases flour from TraderShmoes. The store then sends our protagonist a list of coupons with great recommendations! Karen is ecstatic!
+Our main character Sharon purchases flour from TraderShmoes. The store then sends our protagonist a list of coupons with great recommendations! Sharon is ecstatic!
 
-*scene props*:
+*scene props:*
 - toilet paper
 - masks
 - bullets
@@ -64,23 +64,47 @@ DBSCAN falls under a family of clustering algorithms.
 
 Ok, so how exactly does DBSCAN work...
 
-<!-- Idea of neighbors to explain -->
+Let's think of DBSCAN like finding our neighbors in a neighborhood; or, core points in a cluster.
 
-The algorithm has two adjustable parameters, the *minimum number of points* that fall within a certain *radius* of a point. This allows us control over the density of the clusters.
+This algorithm steps through each point in the dataset and labels that point as a 
+- **core point,**
+- **border point,** or
+- **noise point.**
 
-Let `radius`  be the radius of a neighborhood with respect to some point, and let `min_points` be the required minimum number of points needed to make a neighborhood a neighborhood.
+There are two important parameters to determine what we label each point:
+- `epsilon` and 
+- `minimum_points`.
 
-Then we will have as follows:
-- A *core point* is a point that has a required number of neighbors, `neighbors` >= `min_points`
-- A *noise point* is a point that has less than the required number of neighbors.
+`epsilon` - defines the space to examine around each point.
+- Say you are one point in the dataset. Who are your neighbors? They are the others living within a certain distance of you. So, if you reference one point in the dataset, these are the other points that are close to you. Let `epsilon`, define this shape around that one point.
 
-DBSCAN attempts to label each point as one of the following:
+`minimum_points` - provides us with a threshold from which to determine if a point is a **core point**, **border point**, or **noise point.**
+- Considering that we have the shape, `epsilon`, established around us, count all your neighbors within that space. Now, we have a count of neighbors living within a certain space. Compare this count to the input: `minimum number of points`. 
 
-Core points - data points that have a specified number of neighbors within a specified range.
+Is the total number of neighbors within `epsilon`.. less than, equal to, or greater than `minimum_points`? and how does that map to the point's label type?
 
-Border points - data points that have less than the specified number of neighbors within the range.
+The algorithm labels each point comparing neighbor count to the `minimum_points` parameter.
+- A *core point* is a point that has the same amount or more neighbors than the minimum points.
+  
+- A *noise point* is a point that has less than the minimum threshold aka `minimum_points`: `number of neighbor points` < `minimum_points`.
 
-Noise points - data points that have no neighboring points withing the range.
+- A *border point* is a point that has less than the specified number of neighbors within the range, but is a neighbor of a **core point,** and still assigned to a cluster.
+
+### explanation recap
+
+To recap how DBSCAN works... 
+
+There are two primary inputs:
+- `epsilon` and,
+- `minimum_points`
+
+We step through and label every point in the dataset:
+
+- If the number of points inside `epsilon` are greater than or equal to `minimum_points`, then that point is a **core point** (part of a cluster), 
+  
+- If the number of points inside `epsilon` is less than `minimum_points` then that point is either a **noise point**, 
+
+- ...or a **border point**, iif it has a **core point** as a neighbor.
 
 ## Scene 6. Pseudocode
 
