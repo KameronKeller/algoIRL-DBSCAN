@@ -25,8 +25,8 @@ This algorithm attempts to label each point as one of the following:
 ## Algorithm abstraction
 
 ### Inputs
-- **setOfPoints** `data` - multi dimensional data points
-- **epsilon** `eps` - the distance where other points within this range can be neighbors
+- **setOfPoints** - multi dimensional data points
+- **epsilon** - the distance where other points within this range can be neighbors
 - **minimum points** - minimum number of neighbor points required for a point to be a core point
 
 Other considerations:
@@ -44,8 +44,8 @@ Other considerations:
 
 ## Pseudocode
 - Input: `data`
-- Input: `eps`
-- Input: `min_points`
+- Input: `epsilon`
+- Input: `minimum_points`
 - Input: `ranging_method`
 - Input: `point_label`
   
