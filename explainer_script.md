@@ -172,7 +172,7 @@ This is where things get a bit more complex. DBSCAN does not specify the type of
 
 Zooming out a bit, that means for every item in the dataset, we loop through the entire dataset. In Big-O notation, this means we have a time complexity of O(n*n), or O(n^2). 
 
-However, DBSCAN has been implemented using an r*-tree data structure, which stores distance data in memory. While it is thought that the average search time complexity of r*-trees is O(log n), "no formal analysis of the average runtime complexity has yet been conducted in the literature" (19.6).
+This time complexity can be improved on by using an r*-tree data structure, which stores distance data in memory. While it is thought that the average search time complexity of r*-trees is O(log n), "no formal analysis of the average runtime complexity has yet been conducted in the literature" (19.6). If the average run search time of r*-trees is in fact near O(log n), the average run time of DBSCAN would be O(nlogn).
 
 The final conclusion is that DBSCAN has a worst case time complexity of O(n*D), where D is the time complexity of the distance function. 
 
