@@ -28,7 +28,7 @@ Assuming the world is made up of distinct groups of objects that share propertie
 
 It doesn't matter if we know "what" something is, it just matters that we can group it together with different things based on properties that can be measured.
 
-This concept can be used in:
+This concept can be used to:
 - Analyse imagery and determine **land use!**
 - Find a protein's **docking sites!**
 - Determine a berry's **ripeness!**
@@ -59,11 +59,13 @@ The cluster of products can represent an interest category of specific type of c
 ---
 ## Scene 3: History/Legacy!
 
-Why is DBSCAN used for these applications?
+So who where the brains behind DBSCAN, and what motivated them to create it?
 
 DBSCAN was published in in 1996 at the University of Munich. It was written by Martin Ester, Hans-Peter Kriegel, Jörg Sander, and Xiaowei Xu, with the goal of creating an improved cluster analysis algorithm. 
 
-To understand the history of DBSCAN, we must begin with cluster analysis. Given a data set, it is not uncommon to find groupings (or clusters). Clusters help create classifications of data, which can then be analyzed and used to draw further conclusions. Cluster analysis was introduced in the 1930s in the field of anthropology and is frequently used in other scientific fields.
+To understand the history of DBSCAN, we must begin with cluster analysis...
+
+Cluster analysis is a method of studying data with the goal of grouping similar objects together. Clusters help create classifications of data, which can then be analyzed and used to draw further conclusions. Cluster analysis was introduced in the 1930s in the field of anthropology and is frequently used in other scientific fields.
 
 Many algorithms for identifying clusters in datasets exist, all with their pros and cons. However, algorithms for analyzing clusters in large datasets have the following goals:
 1. Minimal knowledge about the domain.
@@ -107,7 +109,7 @@ Is the total number of neighbors within `epsilon`.. less than, equal to, or grea
 The algorithm labels each point comparing neighbor count to the `minimum_points` parameter.
 - A *core point* is a point that has the same amount or more neighbors than the minimum points.
   
-- A *noise point* is a point that has less than the minimum threshold aka `minimum_points`: `number of neighbor points` < `minimum_points`.
+- A *noise point* is a point that has less than the `minimum_points` in its neighborhood.
 
 - A *border point* is a point that has less than the specified number of neighbors within the range, but is a neighbor of a **core point,** and still assigned to a cluster.
 
@@ -160,21 +162,21 @@ We step through and label every point in the dataset:
 ---
 ## Scene 7. Complexity
 
-DBSCAN can be implemented using a variety of range query methods. This means that the time complexity is heavily influenced by the underlying data structure and range query operation.
-
-But let's begin with the basics.
+How long does this all take?
 
 DBSCAN begins with a loop that goes over every item in the dataset. This part of the function is O(n), as the time it take scales linearly with the size of the dataset.
 
 Within this loop, it checks if the item has been labeled or not. If it has not, it performs the range query operation on that item.
 
-This is where things get a bit more complex. DBSCAN does not specify the type of range query algorithm required. The simple case is a function that loops through every other item in the dataset and checks to see if it is within the epsilon distance using euclidean distance (AKA the pythagorean theorem). This basic range query function also has a run time of O(n).
+DBSCAN does not specify the type of range query algorithm required. A simple range query function is one that loops through every other item in the dataset and checks to see if it is within the epsilon distance using the pythagorean theorem (AKA the euclidean distance). This basic range query function has a run time of O(n).
 
-Zooming out a bit, that means for every item in the dataset, we loop through the entire dataset. In Big-O notation, this means we have a time complexity of O(n*n), or O(n^2). 
+So for every item in the dataset, we perform the range query operation, which loops through every item in the dataset. In Big-O, this means we have a time complexity of O(n*n), or O(n^2).
 
-This time complexity can be improved on by using an r*-tree data structure, which stores distance data in memory. While it is thought that the average search time complexity of r*-trees is O(log n), "no formal analysis of the average runtime complexity has yet been conducted in the literature" (19.6). If the average run search time of r*-trees is in fact near O(log n), the average run time of DBSCAN would be O(nlogn).
+Because DBSCAN can be implemented using a variety of range query methods, the time complexity is heavily influenced by the range query operation and the underlying data structure.
 
-The final conclusion is that DBSCAN has a worst case time complexity of O(n*D), where D is the time complexity of the distance function. 
+For example, the time complexity can be improved on by using an r*-tree data structure, which stores distance data in memory. While it is thought that the average search time complexity of r*-trees is O(log n), "no formal analysis of the average runtime complexity has yet been conducted in the literature" (19.6). If the average run search time of r*-trees is in fact near O(log n), the average run time of DBSCAN would be O(nlogn).
+
+In summary... DBSCAN has a worst case time complexity of O(n*D), where D is the time complexity of the distance function. 
 
 ---
 ## Scene 8. Summary
