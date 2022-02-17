@@ -130,7 +130,11 @@ We step through and label every point in the dataset:
 - ...or a **border point**, IIF it has a **core point** as a neighbor.
 
 ---
-## Scene 6. Pseudocode
+## Scene 5. Pseudocode (demo)
+
+Let's dive into the pseudocode!
+
+Before we get started watch how dbscan creates clusters!
 
 ### Driver loop to make sure each point is visited
 1. For each point in the data:
@@ -160,7 +164,7 @@ We step through and label every point in the dataset:
                2. and then get it's neighbors, and continue adding neighbors of core points to the neighborhood, aka the cluster. This allows the loop to continue until no more neighbors of neighbors are left and the cluster expansion is completed.
 
 ---
-## Scene 7. Complexity
+## Scene 6. Complexity
 
 How long does this all take?
 
@@ -179,7 +183,7 @@ For example, the time complexity can be improved on by using an r*-tree data str
 In summary... DBSCAN has a worst case time complexity of O(n*D), where D is the time complexity of the distance function. 
 
 ---
-## Scene 8. Summary
+## Scene 7. Summary
 
 Let's recap that...
 
@@ -195,7 +199,9 @@ The key components of DBSCAN are:
 ...and remember, the time complexity of DBSCAN is O(n*D).
 
 ---
- ## Scene 9. References
+ ## Scene 8. References
+
+ Check out these sources for more information!
 
 [Density-Based Cluster- and Outlier Analysis, Hans-Peter Kriegel](https://www.dbs.ifi.lmu.de/Forschung/KDD/Clustering/index.html)
 
